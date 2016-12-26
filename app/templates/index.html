@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1> TEST print schedules</h1>
+    {% for key in schedules.keys() %}
+        <div class="schedule-row" id="{{ key }}">
+            <h3>{{ key }}</h3>
+            <div style="align-content: center">
+                {% for season in schedules[key].keys() %}
+                    <h4>{{ season }}</h4>
+                    {{ schedules[key][season]|safe}}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    
+{% endblock %}
